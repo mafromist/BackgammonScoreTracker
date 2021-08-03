@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Backgammon Score Tracker</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Track your Backgammon Score</h1>
+        </header>
+
+        <section>
+
+            <div id="scoreBoard">
+                <div>
+                    <h2 id="scoreP1">5</h2>
+                    <span>to</span>
+                    <h2 id="scoreP2">7</h2>
+                </div>
+                
+            </div>
+
+            <div id="setScoreArea">
+                <p>use the buttons below to keep score.</p>
+                <form action="" id="setScoreForm">
+                    <label for="setScore">Select your tid score</label>
+                    <select name="setScore" id="setScore">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                        <option value="11">11</option>
+                    </select>
+                </form>
+                <h3>Target Score: <span id="setScoreDisplay">0</span></h3>
+            </div>
+
+
+            <div id="scoreControlArea">
+                <button id="scoreAddP1">+1 Player One</button>
+                <button id="scoreAddP2">+1 Player Two</button>
+                <button id="resetScore">Reset Score</button>
+            </div>
+
+        </section>
+
+        <section class="historyBoard">
+            <h1>Previous Game Scores</h1>
+            <ul class="latestGameScore">
+                <li>Player 1: <span id="latestGameScoreP1">2</span>
+                    <span> - </span>
+                    Player 2: <span id="latestGameScoreP2">0</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+
+    <footer>
+        <div>
+            <p>Made by <a href="https://github.com/mafromist">mafromist</a></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
