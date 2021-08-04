@@ -5,67 +5,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Backgammon Score Tracker</title>
 </head>
 
 <body>
-    <main>
-        <header>
-            <h1>Track your Backgammon Score</h1>
-        </header>
+    <section class="has-text-centered">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title has-text-centered">
+                                Backgammon Score Tracker
+                            </p>
+                            <p class="card-footer-item">
+                                <a href="https://github.com/mafromist" class="button is-info is-outlined">made by
+                                    mafromist</a>
+                            </p>
 
-        <section>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <img src="/backgammon.jpg">
+                            </div>
+                        </div>
 
-            <div id="scoreBoard">
-                <div>
-                    <h2 id="scoreP1">0</h2>
-                    <span>to</span>
-                    <h2 id="scoreP2">0</h2>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <p class="subtitle has-text-weight-semibold">Default Target Score: 3</p>
+                            <form action="" id="setScoreForm">
+                                <label for="setScore">You can change the target score</label>
+                                <select name="setScore" id="setScore">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="11">11</option>
+                                </select>
+                            </form>
+                        </div>
+                        <footer class="card-footer">
+                            <h3 class="card-footer-item">Target Score: <span id="setScoreDisplay">0</span></h3>
+                        </footer>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="content">
+                                <h2>Player 1: <span id="scoreP1">0</span> vs. Player 2: <span id="scoreP2">0</span></h2>
+                            </div>
+                            <p class="subtitle">Use the buttons below to keep score</p>
+                        </div>
+                        <footer class="card-footer">
+                            <button class="button has-background-primary-dark has-text-white card-footer-item" id="scoreAddP1">+1 Player One</button>
+                            <button class="button has-background-success-dark has-text-white card-footer-item" id="scoreAddP2">+1 Player Two</button>
+                            <button class="button has-background-danger-dark has-text-white card-footer-item" id="resetScore">Reset Score</button>
+                        </footer>
+                    </div>
                 </div>
-                
             </div>
-
-            <div id="setScoreArea">
-                <p>use the buttons below to keep score.</p>
-                <form action="" id="setScoreForm">
-                    <label for="setScore">Select your tid score</label>
-                    <select name="setScore" id="setScore">
-                        <option value="3">3</option>
-                        <option value="5">5</option>
-                        <option value="7">7</option>
-                        <option value="11">11</option>
-                    </select>
-                </form>
-                <h3>Target Score: <span id="setScoreDisplay">0</span></h3>
-            </div>
-
-
-            <div id="scoreControlArea">
-                <button id="scoreAddP1">+1 Player One</button>
-                <button id="scoreAddP2">+1 Player Two</button>
-                <button id="resetScore">Reset Score</button>
-            </div>
-
-        </section>
-
-        <section class="historyBoard">
-            <h1>Previous Game Scores</h1>
-            <ul class="latestGameScore">
-                <li>Player 1: <span id="latestGameScoreP1">0</span>
-                    <span> - </span>
-                    Player 2: <span id="latestGameScoreP2">0</span>
-                </li>
-            </ul>
-        </section>
-    </main>
-
-
-    <footer>
-        <div>
-            <p>Made by <a href="https://github.com/mafromist">mafromist</a></p>
         </div>
-    </footer>
+
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-header">
+                            <h1 class="card-header-title">Previous Game Scores (this part WIP)</h1>
+
+                        </div>
+                        <div class="card-content">
+                            <ul class="latestGameScore">
+                                <li>Player 1: <span id="latestGameScoreP1">0</span>
+                                    <span> - </span>
+                                    Player 2: <span id="latestGameScoreP2">0</span>
+                                </li>
+                            </ul>
+                            <p>Time stamp:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
 
     <script src="app.js"></script>
 </body>
