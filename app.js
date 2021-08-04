@@ -26,12 +26,16 @@ let isGameOver = false;
 let targetScore = 3;
 
 const resetScore = () => {
-    isGameOver = false;
-    scoreP1 = 0;
-    scoreP2 = 0;
-    scoreP1Input.innerText = 0;
-    scoreP2Input.innerText = 0;
-  };
+  isGameOver = false;
+  scoreP1 = 0;
+  scoreP2 = 0;
+  scoreP1Input.innerText = 0;
+  scoreP2Input.innerText = 0;
+  scoreP1Input.classList.remove("has-text-success-dark", "has-text-danger-dark");
+  scoreP2Input.classList.remove("has-text-success-dark", "has-text-danger-dark");
+  scoreAddP1Btn.disabled = false;
+  scoreAddP2Btn.disabled = false;
+};
 
 setScoreSelect.addEventListener("change", function () {
   targetScore = parseInt(this.value);
@@ -46,6 +50,10 @@ scoreAddP1Btn.addEventListener("click", function () {
     scoreP1 += 1;
     if (scoreP1 === targetScore) {
       isGameOver = true;
+      scoreP1Input.classList.add("has-text-success-dark");
+      scoreP2Input.classList.add("has-text-danger-dark");
+      scoreAddP1Btn.disabled = true;
+      scoreAddP2Btn.disabled = true;
     }
     scoreP1Input.innerText = scoreP1;
   }
@@ -56,6 +64,10 @@ scoreAddP2Btn.addEventListener("click", function () {
     scoreP2 += 1;
     if (scoreP2 === targetScore) {
       isGameOver = true;
+      scoreP1Input.classList.add("has-text-danger-dark");
+      scoreP2Input.classList.add("has-text-success-dark");
+      scoreAddP1Btn.disabled = true;
+      scoreAddP2Btn.disabled = true;
     }
     scoreP2Input.innerText = scoreP2;
   }
@@ -65,10 +77,6 @@ scoreAddP2Btn.addEventListener("click", function () {
 
 resetScoreBtn.addEventListener("click", resetScore);
 
-
-
 //if any player hit to the target score;
-    //the players add game button will be disabled
-    //tracker will append a new list to the ul to keep the history of players winning game
-
-
+//the players add game button will be disabled
+//tracker will append a new list to the ul to keep the history of players winning game
